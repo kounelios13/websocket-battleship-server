@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ws-battleship-service
+  namespace: applications
+spec:
+  selector:
+    app: battleship-ws
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080

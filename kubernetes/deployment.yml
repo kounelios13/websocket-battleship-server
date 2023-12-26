@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foo-deployment
+  namespace: applications
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: battleship-ws
+  template:
+    metadata:
+      labels:
+        app: battleship-ws
+    spec:
+      containers:
+      - name: ws-server
+        image: ghcr.io/kounelios13/websocket-battleship-server:latest
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: gh-secrets

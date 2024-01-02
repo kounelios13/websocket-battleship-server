@@ -19,7 +19,6 @@ export class WebSocketCommand{
         switch(this.#commandType){
             case 'register_room':{
                 return this.registerRoom();
-                break;
             }
             case 'list_rooms':{
                 return this.listRooms();
@@ -35,7 +34,7 @@ export class WebSocketCommand{
         try{
             const rooms = this.sharedStorage.getItem('rooms') || [];
             const room = new WebSocketRoom(roomArg.value , rooms.length)
-            rooms.push({'room_name' : roomArg.value , 'room_id': rooms.length});
+            rooms.push(room);
             this.sharedStorage.setItem('rooms', rooms);
             return rooms;
         }catch(e){

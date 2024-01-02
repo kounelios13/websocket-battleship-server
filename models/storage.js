@@ -10,7 +10,11 @@ export class SharedStorage {
         return SharedStorage.instance;
     }
 
-    // Add methods to manipulate storage here
+    /**
+     * setItem - Set an item in the storage instance
+     * @param {string} key - Name of item to store 
+     * @param {*} value - Value of item to store
+     */
     setItem(key, value) {
         this.storage[key] = value;
     }
@@ -25,5 +29,3 @@ Object.defineProperty(SharedStorage, 'instance', {
     enumerable: false,
     writable: true
 });
-
-// Example usage

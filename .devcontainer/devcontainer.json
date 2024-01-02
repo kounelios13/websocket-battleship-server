@@ -4,5 +4,16 @@
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
-  	"remoteUser": "node"
+  	"remoteUser": "node",
+	  "customizations": {
+		"vscode": {
+			"extensions": [
+				"donjayamanne.githistory",
+				"mhutchie.git-graph",
+				"donjayamanne.git-extension-pack",
+				"waderyan.gitblame"
+			]
+		}
+	}
+
 }
